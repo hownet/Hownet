@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{41DE77E9-9000-46BA-8BD3-C15AFA083710}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Client</RootNamespace>
+    <AssemblyName>Client</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataSetSurrogate.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetSerializeDS.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Service References\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\Hownet.Model.Materiel.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_809.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_810.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_811.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\201.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\202.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\203.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\204.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\205.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\206.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\207.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\208.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\209.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\210.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\211.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\212.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\261.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\262.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\264.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\265.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\266.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\267.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\301.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\302.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\303.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\305.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\306.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\307.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\404.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\405.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\406.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\407.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\408.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\409.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\461.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\462.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\464.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\465.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\466.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\501.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\502.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\503.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\505.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\507.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\561.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\601.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\602.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\603.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\604.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\605.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\606.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\607.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\608.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\609.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\610.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\661.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\662.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\664.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\665.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\666.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\667.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\801.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\802.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\803.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\804.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\805.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\806.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\807.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\808.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\809.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\810.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\811.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\901.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\902.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\903.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\904.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\905.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\906.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2022.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddTableHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AdpDiagramAddTable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AssignTask.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\audit.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carry.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closed.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\counted.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataContainer_MoveFirstHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataContainer_MoveLastHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataContainer_MoveNextHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataContainer_MovePreviousHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataContainer_NewRecordHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditComposePage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditQuery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditTableHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditWorkflowTask.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExportExcel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FieldsUpdate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\finished.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FollowUpComposeMenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FunctionHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GroupInkClose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GroupMacroRows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\honet.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoRight.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PrintDialogAccess.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveAndClose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sending.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TableInsertCellsDialog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TableOfContentsRemove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\verify.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Verify.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\身份证.jpg" />
+    <None Include="Service References\ServiceReference1\Arrays.xsd" />
+    <None Include="Service References\ServiceReference1\Message.xsd" />
+    <None Include="Service References\ServiceReference1\service.wsdl" />
+    <None Include="Service References\ServiceReference1\service.xsd" />
+    <None Include="Service References\ServiceReference1\service1.xsd" />
+    <None Include="Service References\ServiceReference1\service2.xsd" />
+    <None Include="Service References\ServiceReference1\System.Data.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceReference1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference1\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

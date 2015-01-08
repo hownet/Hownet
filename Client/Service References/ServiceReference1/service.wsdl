@@ -1,0 +1,674 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="FileTransportService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="TcpEP_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.microsoft.com/Message" />
+      <xsd:import />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFileTransportService_GetTicketInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTicketInfo" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetTicketInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTicketInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_EmpAddWork_InputMessage">
+    <wsdl:part name="parameters" element="tns:EmpAddWork" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_EmpAddWork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EmpAddWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_Ordering_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ordering" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_Ordering_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrderingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetEmpWorkingList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmpWorkingList" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetEmpWorkingList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmpWorkingListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetStringData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStringData" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetStringData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStringDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetLastBackupTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastBackupTime" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetLastBackupTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastBackupTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="FileUploadMessage">
+    <wsdl:part name="parameters" element="tns:FileUploadMessage" />
+  </wsdl:message>
+  <wsdl:message name="FileUploadMessage_Headers">
+    <wsdl:part name="FileName" element="tns:FileName" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetFileList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileList" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetFileList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFile" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_DelFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelFile" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetList" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetDSForPrcoce_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDSForPrcoce" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetDSForPrcoce_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDSForPrcoceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetSingle_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSingle" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetSingle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSingleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_getZipData_InputMessage">
+    <wsdl:part name="parameters" element="tns:getZipData" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_getZipData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getZipDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJson" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetBySql_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBySql" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetBySql_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBySqlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetSqlByByte_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSqlByByte" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetSqlByByte_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSqlByByteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetStringList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStringList" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetStringList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStringListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetOne_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOne" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetOne_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_ExecSql_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecSql" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_ExecSql_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecSqlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_Updata_InputMessage">
+    <wsdl:part name="parameters" element="tns:Updata" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_Updata_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:Add" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_CloseClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:CloseClient" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_CloseClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CloseClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetSysTem_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysTem" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetSysTem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysTemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetPU_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPU" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetPU_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPUResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_Backup_InputMessage">
+    <wsdl:part name="parameters" element="tns:Backup" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_Backup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BackupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_AddLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddLog" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_AddLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetUserName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserName" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetUserName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_CarID_InputMessage">
+    <wsdl:part name="parameters" element="tns:CarID" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_CarID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CarIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_PadCarID_InputMessage">
+    <wsdl:part name="parameters" element="tns:PadCarID" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_PadCarID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PadCarIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_SetDataTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetDataTable" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_SetDataTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetDataTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetDateTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDateTime" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetDateTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetCardMain_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardMain" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetCardMain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardMainResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetBoxInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBoxInfo" />
+  </wsdl:message>
+  <wsdl:message name="IFileTransportService_GetBoxInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBoxInfoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IFileTransportService">
+    <wsdl:operation name="GetTicketInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/GetTicketInfo" message="tns:IFileTransportService_GetTicketInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/GetTicketInfoResponse" message="tns:IFileTransportService_GetTicketInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EmpAddWork">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/EmpAddWork" message="tns:IFileTransportService_EmpAddWork_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/EmpAddWorkResponse" message="tns:IFileTransportService_EmpAddWork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Ordering">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/Ordering" message="tns:IFileTransportService_Ordering_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/OrderingResponse" message="tns:IFileTransportService_Ordering_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpWorkingList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/GetEmpWorkingList" message="tns:IFileTransportService_GetEmpWorkingList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/GetEmpWorkingListResponse" message="tns:IFileTransportService_GetEmpWorkingList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStringData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/GetStringData" message="tns:IFileTransportService_GetStringData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/GetStringDataResponse" message="tns:IFileTransportService_GetStringData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastBackupTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/GetLastBackupTime" message="tns:IFileTransportService_GetLastBackupTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/GetLastBackupTimeResponse" message="tns:IFileTransportService_GetLastBackupTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <wsdl:input wsaw:Action="UploadFile" name="FileUploadMessage" message="tns:FileUploadMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/GetFileList" message="tns:IFileTransportService_GetFileList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/GetFileListResponse" message="tns:IFileTransportService_GetFileList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/GetFile" message="tns:IFileTransportService_GetFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/GetFileResponse" message="tns:IFileTransportService_GetFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelFile">
+      <wsdl:input wsaw:Action="DelFile" message="tns:IFileTransportService_DelFile_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/GetList" message="tns:IFileTransportService_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/GetListResponse" message="tns:IFileTransportService_GetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDSForPrcoce">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/GetDSForPrcoce" message="tns:IFileTransportService_GetDSForPrcoce_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/GetDSForPrcoceResponse" message="tns:IFileTransportService_GetDSForPrcoce_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSingle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/GetSingle" message="tns:IFileTransportService_GetSingle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/GetSingleResponse" message="tns:IFileTransportService_GetSingle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getZipData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/getZipData" message="tns:IFileTransportService_getZipData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/getZipDataResponse" message="tns:IFileTransportService_getZipData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/GetJson" message="tns:IFileTransportService_GetJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/GetJsonResponse" message="tns:IFileTransportService_GetJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBySql">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/GetBySql" message="tns:IFileTransportService_GetBySql_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/GetBySqlResponse" message="tns:IFileTransportService_GetBySql_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSqlByByte">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/GetSqlByByte" message="tns:IFileTransportService_GetSqlByByte_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/GetSqlByByteResponse" message="tns:IFileTransportService_GetSqlByByte_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStringList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/GetStringList" message="tns:IFileTransportService_GetStringList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/GetStringListResponse" message="tns:IFileTransportService_GetStringList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOne">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/GetOne" message="tns:IFileTransportService_GetOne_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/GetOneResponse" message="tns:IFileTransportService_GetOne_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecSql">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/ExecSql" message="tns:IFileTransportService_ExecSql_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/ExecSqlResponse" message="tns:IFileTransportService_ExecSql_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Updata">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/Updata" message="tns:IFileTransportService_Updata_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/UpdataResponse" message="tns:IFileTransportService_Updata_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/Add" message="tns:IFileTransportService_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/AddResponse" message="tns:IFileTransportService_Add_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/CloseClient" message="tns:IFileTransportService_CloseClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/CloseClientResponse" message="tns:IFileTransportService_CloseClient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysTem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/GetSysTem" message="tns:IFileTransportService_GetSysTem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/GetSysTemResponse" message="tns:IFileTransportService_GetSysTem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPU">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/GetPU" message="tns:IFileTransportService_GetPU_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/GetPUResponse" message="tns:IFileTransportService_GetPU_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Backup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/Backup" message="tns:IFileTransportService_Backup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/BackupResponse" message="tns:IFileTransportService_Backup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/AddLog" message="tns:IFileTransportService_AddLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/AddLogResponse" message="tns:IFileTransportService_AddLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/GetUserName" message="tns:IFileTransportService_GetUserName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/GetUserNameResponse" message="tns:IFileTransportService_GetUserName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CarID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/CarID" message="tns:IFileTransportService_CarID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/CarIDResponse" message="tns:IFileTransportService_CarID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PadCarID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/PadCarID" message="tns:IFileTransportService_PadCarID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/PadCarIDResponse" message="tns:IFileTransportService_PadCarID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetDataTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/SetDataTable" message="tns:IFileTransportService_SetDataTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/SetDataTableResponse" message="tns:IFileTransportService_SetDataTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDateTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/GetDateTime" message="tns:IFileTransportService_GetDateTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/GetDateTimeResponse" message="tns:IFileTransportService_GetDateTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardMain">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/GetCardMain" message="tns:IFileTransportService_GetCardMain_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/GetCardMainResponse" message="tns:IFileTransportService_GetCardMain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileTransportService/GetBoxInfo" message="tns:IFileTransportService_GetBoxInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileTransportService/GetBoxInfoResponse" message="tns:IFileTransportService_GetBoxInfo_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TcpEP" type="tns:IFileTransportService">
+    <wsp:PolicyReference URI="#TcpEP_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetTicketInfo">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/GetTicketInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmpAddWork">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/EmpAddWork" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ordering">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/Ordering" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpWorkingList">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/GetEmpWorkingList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStringData">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/GetStringData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastBackupTime">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/GetLastBackupTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <soap12:operation soapAction="UploadFile" style="document" />
+      <wsdl:input name="FileUploadMessage">
+        <soap12:header message="tns:FileUploadMessage_Headers" part="FileName" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileList">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/GetFileList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFile">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/GetFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelFile">
+      <soap12:operation soapAction="DelFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="GetList">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/GetList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDSForPrcoce">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/GetDSForPrcoce" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSingle">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/GetSingle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getZipData">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/getZipData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJson">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/GetJson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBySql">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/GetBySql" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSqlByByte">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/GetSqlByByte" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStringList">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/GetStringList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOne">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/GetOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecSql">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/ExecSql" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Updata">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/Updata" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/Add" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseClient">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/CloseClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSysTem">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/GetSysTem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPU">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/GetPU" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Backup">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/Backup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLog">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/AddLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserName">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/GetUserName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarID">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/CarID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PadCarID">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/PadCarID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDataTable">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/SetDataTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDateTime">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/GetDateTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardMain">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/GetCardMain" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxInfo">
+      <soap12:operation soapAction="http://tempuri.org/IFileTransportService/GetBoxInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FileTransportService">
+    <wsdl:port name="TcpEP" binding="tns:TcpEP">
+      <soap12:address location="net.tcp://localhost:7000/Service" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:7000/Service</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
